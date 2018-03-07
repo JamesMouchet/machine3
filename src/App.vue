@@ -15,15 +15,8 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  methods: {
-    onMachinesListClick: function () {
-      alert('Liste des machines')
-    },
-    onMapClick: function () {
-      alert(' carte')
-    }
-  }
 }
+
 </script>
 
 <style scoped>

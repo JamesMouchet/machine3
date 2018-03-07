@@ -2,30 +2,27 @@
 <div>
   <br>
 <div class="test container">
-  <h1>{{machines.name}}</h1>
+  <h1>{{name}}</h1>
   <h3 v-bind:class="statut()">Status {{message}}</h3>
-  <h5>Last time checked {{machines.checkedAt.toLocaleString()}}</h5>
+  <h5>Last time checked {{checkedAt.toLocaleString()}}</h5>
 </div>
 </div>
 </template>
 
 <script>
-export default {
+import MachinesList from './MachinesList.vue';
+export default { 
   name: 'Machine',
+  props: ['name', 'status', 'checkedAt'],
   data () {
     return {
     red: 'red',
     green: 'green',
-     machines: {
-        name: 'What else ?',
-        status: false,
-        checkedAt: new Date(),
-      }
     }
   },
   methods: {
     statut: function () {
-           if(this.machines.status) {
+           if(this.status) {
              this.message = 'OK';
              return 'green';
            } else {
@@ -44,8 +41,10 @@ export default {
 }
 .red {
   color: red;
+  font-weight: bold;
 }
 .green {
   color: green;
+  font-weight: bold;
 }
 </style>
