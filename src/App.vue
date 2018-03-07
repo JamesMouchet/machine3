@@ -12,7 +12,18 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      machines: [{
+        id: 1,
+        name: 'What else ?',
+        status: true,
+        checkedAt: new Date(),
+    }, {
+        id: 2,
+        name: 'Broken',
+        status: false,
+        checkedAt: new Date(),
+    }]
     }
   },
 }
