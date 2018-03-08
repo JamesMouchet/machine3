@@ -3,7 +3,7 @@
     <img src="http://vuejs.org/images/logo.png">
     <h1>{{ msg }}</h1>
     <button class="button"><router-link :to="{ path: 'machines' }">Consulter la liste des machines</router-link></button> <button class="button"><router-link :to="{ path: 'map' }">Afficher la map</router-link></button>
-    <router-view></router-view>  
+    <router-view></router-view>
   </div>
 </template>
 
@@ -13,17 +13,6 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      machines: [{
-        id: 1,
-        name: 'What else ?',
-        status: true,
-        checkedAt: new Date(),
-    }, {
-        id: 2,
-        name: 'Broken',
-        status: false,
-        checkedAt: new Date(),
-    }]
     }
   },
 }
@@ -39,13 +28,13 @@ border-radius: 5px;
 padding:       8px 20px;
 color:         #ffffff;
 display:       inline-block;
-font:          normal 600 24px/1 "Open Sans", sans-serif;
+font:          normal 600 24px/1 "Terminus", sans-serif;
 text-align:    center;
 text-shadow:   1px 1px #ffffff;
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Terminus', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

@@ -10,8 +10,7 @@
 </template>
 
 <script>
-import MachinesList from './MachinesList.vue';
-export default { 
+export default {
   name: 'Machine',
   props: ['name', 'status', 'checkedAt'],
   data () {
@@ -30,14 +29,14 @@ export default {
              return 'red';
            }
   }
-   
+
  }
 }
 </script>
 
 <style>
 .test {
-  border: solid 1px black;
+  border: solid 1px #000000;
 }
 .red {
   color: red;
