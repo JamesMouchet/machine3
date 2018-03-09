@@ -3,18 +3,36 @@
     <img src="http://vuejs.org/images/logo.png">
     <h1>{{ msg }}</h1>
     <button class="button"><router-link :to="{ path: 'machines' }">Consulter la liste des machines</router-link></button> <button class="button"><router-link :to="{ path: 'map' }">Afficher la map</router-link></button>
-    <router-view></router-view>
+    <router-view v-bind:machines = "machines" v-bind:loading="loading" v-bind:error="error"></router-view>
   </div>
 </template>
 
 <script>
+  import axios from 'axios';
 export default {
+  created() {
+    this.getmachine();
+  },
   name: 'app',
-  data () {
+  data() {
     return {
+      machines: [],
+      loading: false,
+      error: null,
       msg: 'Welcome to Your Vue.js App',
     }
   },
+  methods: {
+    getmachine: function () {
+      this.loading = true;
+      axios.get("https://machine-api-campus.herokuapp.com/api/machines")
+        .then((response) => {
+          this.machines = response.data;
+        }, (error) => {
+          this.loading = false;
+        })
+    }
+  }
 }
 
 </script>
